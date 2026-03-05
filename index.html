@@ -54,8 +54,9 @@
         <div class="artist-grid">
           <article class="card">
             <img
+              id="joaoPlayer"
               class="artist-image"
-              src="images/artists/joao-gilberto.jpg"
+              src="Test2/images/artists/joao-gilberto.jpg"
               alt="Portrait photo of João Gilberto performing with guitar"
             />
             <h3>João Gilberto</h3>
@@ -67,7 +68,7 @@
           <article class="card">
             <img
               class="artist-image"
-              src="images/artists/antonio-carlos-jobim.jpg"
+              src="Test2/images/artists/antonio-carlos-jobim.jpg"
               alt="Portrait photo of Antônio Carlos Jobim at the piano"
             />
             <h3>Antônio Carlos Jobim</h3>
@@ -79,7 +80,7 @@
           <article class="card">
             <img
               class="artist-image"
-              src="images/artists/astrud-gilberto.jpg"
+              src="Test2/images/artists/astrud-gilberto.jpg"
               alt="Portrait photo of Astrud Gilberto singing"
             />
             <h3>Astrud Gilberto</h3>
@@ -91,7 +92,7 @@
           <article class="card">
             <img
               class="artist-image"
-              src="images/artists/stan-getz.jpg"
+              src="Test2/images/artists/stan-getz.jpg"
               alt="Portrait photo of Stan Getz playing saxophone"
             />
             <h3>Stan Getz</h3>
@@ -124,5 +125,28 @@
       <p>Placeholder: Add social links and newsletter signup.</p>
     </div>
   </footer>
+
+  <iframe
+    id="joaoVideo"
+    width="320"
+    height="180"
+    src="about:blank"
+    title="João Gilberto YouTube player"
+    style="position: fixed; right: 16px; bottom: 16px; z-index: 1000; border: 0; display: none; background: #000"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+
+  <script>
+    const joaoImage = document.getElementById("joaoPlayer");
+    const joaoVideo = document.getElementById("joaoVideo");
+
+    joaoImage.addEventListener("click", () => {
+      joaoVideo.style.display = "block";
+      joaoVideo.src =
+        "https://www.youtube.com/embed/GtoSScViTbg?autoplay=1&playsinline=1&rel=0&t=" +
+        Date.now();
+    });
+  </script>
 </body>
 </html>
