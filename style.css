@@ -1,0 +1,253 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --green: #1f6a5b;
+  --yellow: #f2c14e;
+  --sand: #f7ecd4;
+  --ocean: #1f8da3;
+  --cream: #fffaf1;
+  --text-dark: #1f2a2a;
+  --text-light: #fffdf8;
+  --shadow: 0 12px 30px rgba(31, 42, 42, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", "Segoe UI", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background: linear-gradient(180deg, var(--sand), #fffef9 40%, #f8fffb);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.hero {
+  min-height: 92vh;
+  padding: 1.4rem 0 5rem;
+  color: var(--text-light);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Ant%C3%B4nio%20Carlos%20Jobim%20(cropped).jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.site-nav {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  color: var(--text-light);
+  text-decoration: none;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.1rem;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-links a:hover {
+  border-color: var(--yellow);
+  opacity: 0.95;
+}
+
+.hero-content {
+  width: min(1100px, 92%);
+  margin: 7rem auto 0;
+  max-width: 720px;
+}
+
+.hero-content h1 {
+  opacity: 0;
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+.tagline {
+  margin-bottom: 0.7rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffe6a7;
+  opacity: 0;
+  animation: fadeInUp 0.75s ease forwards;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5vw, 3.9rem);
+  margin-bottom: 0.9rem;
+}
+
+.hero-subtitle {
+  max-width: 60ch;
+  font-size: 1.08rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.18s forwards;
+}
+
+.hero-content p:not(.tagline):not(.hero-subtitle) {
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.82rem 1.4rem;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: #2e250f;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.45s forwards;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: 4.2rem 0;
+}
+
+.about {
+  background: #fff7e4;
+}
+
+.artists {
+  background: var(--cream);
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.6rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fffefa;
+  border: 1px solid #ead8b4;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(31, 42, 42, 0.16);
+}
+
+.artist-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+  border: 1px solid #e8d5ae;
+}
+
+.playlist {
+  background: linear-gradient(180deg, #f1fbff, #f3fff7);
+}
+
+.track-list {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.site-footer {
+  background: var(--green);
+  color: var(--text-light);
+  padding: 1.6rem 0;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 840px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    margin-top: 4rem;
+  }
+
+  .artist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: 88vh;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .artist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 3.2rem 0;
+  }
+}
